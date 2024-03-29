@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +12,17 @@ namespace OperS_lab6
 {
     public partial class MyForm : Form
     {
+        private MyFunctions Function; 
         public MyForm()
         {
             InitializeComponent();
+            Function = new MyFunctions();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Выполнено действие из DLL!");
+            string b = MyFunctions.MyFunction();
+            MessageBox.Show(b);
         }
 
         private void MyForm_Load(object sender, EventArgs e)
